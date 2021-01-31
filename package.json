@@ -22,14 +22,17 @@
 		"email": "juvsqz@gmail.com"
 	},
 	"scripts": {
-		"client:deploy": "npm run build && gh-pages -d build",
+    "client:deploy": "npm run build && gh-pages -d build",
+    "build:server":  "rm -rf dist/server && tsc --project ./src/server/tsconfig.json",
+    "start:server": "node dist/server/index.js",
+    "dev:server": "nodemon",
 		"start": "react-scripts start --no-cache ./src/app/index.tsx",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"lint": "yarn lint:scripts && yarn lint:styles",
 		"lint:scripts": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
 		"lint:styles": "stylelint 'src/**/*.{css,sass,scss,less}'",
-		"dev:server": "nodemon"
+    "heroku-postbuild": "yarn build:server"
 	},
 	"dependencies": {
 		"express": "^4.17.1",
