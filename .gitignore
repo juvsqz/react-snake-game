@@ -70,8 +70,8 @@ typings/
 .nuxt
 
 # Nuxt generate
-dist
-build
+dist/
+build/
 
 # vuepress build output
 .vuepress/dist
