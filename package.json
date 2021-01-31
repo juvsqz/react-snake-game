@@ -23,7 +23,7 @@
 	},
 	"scripts": {
 		"build:server": "rm -rf dist/server && tsc --project ./src/server/tsconfig.json",
-		"start:server": "forever start dist/server/index.js",
+		"start:server": "forever start --minUptime 1000 --spinSleepTime 1000  -c node dist/server/index.js",
 		"dev:server": "nodemon",
 		"deploy": "npm run build && gh-pages -d build",
 		"start": "react-scripts start --no-cache ./src/app/index.tsx",
