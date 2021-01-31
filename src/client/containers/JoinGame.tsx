@@ -21,6 +21,11 @@ const JoinGame = ({ onCancel, roomId: roomIdParam }: JoinGameProps) => {
 		setRoomId(event.target.value);
 	};
 
+	const handleCancel = () => {
+		onCancel();
+		window.history.pushState(null, '', window.location.pathname);
+	};
+
 	const handleJoinGame = () => {
 		if (name.trim() === '') {
 			// eslint-disable-next-line no-alert
@@ -68,7 +73,7 @@ const JoinGame = ({ onCancel, roomId: roomIdParam }: JoinGameProps) => {
 					<button
 						type="button"
 						className="btn btn-danger mx-3"
-						onClick={onCancel}
+						onClick={handleCancel}
 					>
 						Cancel
 					</button>

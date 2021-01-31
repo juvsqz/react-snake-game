@@ -13,12 +13,6 @@ const HomeScreen = () => {
 		return new URLSearchParams(window.location.search).get('id');
 	}, []);
 
-	useEffect(() => {
-		if (roomIdParam) {
-			setShowJoin(true);
-		}
-	}, [roomIdParam, showJoin]);
-
 	const { state, socket } = useGameContext();
 
 	const waitingForOtherPlayers = useMemo(() => {
@@ -44,10 +38,22 @@ const HomeScreen = () => {
 	const reset = () => {
 		setShowMulti(false);
 		setShowJoin(false);
+		// Remove query params
 	};
+
+	useEffect(() => {
+		reset();
+	}, [state.gameOver]);
+
+	useEffect(() => {
+		if (roomIdParam) {
+			setShowJoin(true);
+		}
+	}, [roomIdParam]);
 
 	if (waitingForOtherPlayers) return <Lobby />;
 	if (showMulti) return <Multiplayer onCancel={reset} />;
+	console.log('showJoin', 123);
 	if (showJoin) return <JoinGame roomId={roomIdParam || ''} onCancel={reset} />;
 
 	return (
