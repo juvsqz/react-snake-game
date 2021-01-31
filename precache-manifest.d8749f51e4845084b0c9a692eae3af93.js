@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "59cd1cd082ba3cb272e6ff29f61d5e56",
+    "revision": "8e06a7b00391f965ef1cc44f57e0f872",
     "url": "/react-snake-game/index.html"
   },
   {
-    "revision": "e799fb1c8bd9e31bd081",
+    "revision": "669ad1c35866ac0bafc3",
     "url": "/react-snake-game/static/css/main.d325dd13.chunk.css"
   },
   {
-    "revision": "983a23a616ccf3496aae",
-    "url": "/react-snake-game/static/js/2.9c53e883.chunk.js"
+    "revision": "28f56aed24d4dfca77d4",
+    "url": "/react-snake-game/static/js/2.28dac093.chunk.js"
   },
   {
     "revision": "abf6fcace3adbf8ab345683d164de87d",
-    "url": "/react-snake-game/static/js/2.9c53e883.chunk.js.LICENSE.txt"
+    "url": "/react-snake-game/static/js/2.28dac093.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e799fb1c8bd9e31bd081",
-    "url": "/react-snake-game/static/js/main.516c5847.chunk.js"
+    "revision": "669ad1c35866ac0bafc3",
+    "url": "/react-snake-game/static/js/main.b6197fcc.chunk.js"
   },
   {
     "revision": "29e856bcd72f0474f31a",
