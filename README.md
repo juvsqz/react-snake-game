@@ -24,12 +24,17 @@ This project was bootstrapped with [Create React App].(https://github.com/facebo
         <li><a href="#to-play-locally">Play locally</a></li>
         <li><a href="#to-play-online">Play online</a></li>
       </ul>
+      <a href="#game-rules">Game rules</a>
+      <ul>
+        <li><a href="#bonus">Bonus</a></li>
+      </ul>
     </li>
     <li><a href="#development">Development</a></li>
     <li><a href="#deployment">Deployment</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
+
 
 
 ## Technologies
@@ -56,7 +61,6 @@ $ cd react-snake-game
 $ yarn install
 
 
-
 ```
 
 
@@ -73,6 +77,18 @@ $ yarn start
 
 ### To play online
 Simply visit the <https://juvsqz.github.io/react-snake-game/> and play the game.
+
+## Game Rules
+- The goal is to stay survive
+- Snake can eat food to get longer
+- 1 food spawned randomly after previous food is eaten
+- If a snake hits a wall, he loses and game over.
+- If any snake hit other snake body, then he lose and the game over
+
+### Bonus
+- Game can be played by 2+ person
+- Game can be played online with other person
+- Can be shared to social
 
 
 ## Development
