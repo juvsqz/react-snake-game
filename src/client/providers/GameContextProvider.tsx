@@ -47,10 +47,10 @@ type GameContextProviderProps = {
 };
 const GameContextProvider = ({ children }: GameContextProviderProps) => {
 	const socket = useMemo(
-		() => io(process.env.REACT_APP_SOCKET_SERVER || ''),
+		() => io(`${process.env.REACT_APP_SOCKET_SERVER}` || ''),
 		[]
 	);
-	console.log('test', process.env.REACT_APP_SOCKET_SERVER);
+	console.log('testa', process.env.REACT_APP_SOCKET_SERVER);
 	const [state, dispatch] = useReducer(reducer, InitialState);
 
 	const handleSetGameState = (_state: string) => {

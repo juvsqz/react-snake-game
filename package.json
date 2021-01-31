@@ -26,6 +26,7 @@
 		"start:server": "node dist/server/index.js",
     "dev:server": "nodemon",
     "deploy": "npm run build && gh-pages -d build",
+    "start": "react-scripts start --no-cache ./src/app/index.tsx",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"lint": "yarn lint:scripts && yarn lint:styles",
