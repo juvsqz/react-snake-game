@@ -22,17 +22,17 @@
 		"email": "juvsqz@gmail.com"
 	},
 	"scripts": {
-    "client:deploy": "npm run build && gh-pages -d build",
-    "build:server":  "rm -rf dist/server && tsc --project ./src/server/tsconfig.json",
-    "start:server": "node dist/server/index.js",
-    "dev:server": "nodemon",
+		"client:deploy": "npm run build && gh-pages -d build",
+		"build:server": "rm -rf dist/server && tsc --project ./src/server/tsconfig.json",
+		"start:server": "node dist/server/index.js",
+		"dev:server": "nodemon",
 		"start": "react-scripts start --no-cache ./src/app/index.tsx",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"lint": "yarn lint:scripts && yarn lint:styles",
 		"lint:scripts": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
 		"lint:styles": "stylelint 'src/**/*.{css,sass,scss,less}'",
-    "heroku-postbuild": "yarn build:server"
+		"heroku-postbuild": "yarn build:server"
 	},
 	"dependencies": {
 		"express": "^4.17.1",
@@ -56,6 +56,7 @@
 		"babel-plugin-module-resolver": "^4.0.0",
 		"eslint-config-airbnb": "^18.2.0",
 		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-jsx-a11y": "^6.3.1",
 		"eslint-plugin-prettier": "^3.1.4",
 		"express": "^4.17.1",

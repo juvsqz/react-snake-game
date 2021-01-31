@@ -13,4 +13,6 @@ const io = new socketIo.Server(server, {
 });
 
 io.on('connection', (socket: any) => initializeListeners(io, socket));
-server.listen(4000).on('listening', () => console.log('Running'));
+server
+	.listen(process.env.PORT || 4000)
+	.on('listening', () => console.log('Running'));
