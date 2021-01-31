@@ -1,5 +1,4 @@
 import React, { useMemo, useEffect } from 'react';
-import { Modal } from '../components';
 import { useGameContext } from '../providers';
 import Lobby from './Lobby';
 import SnakeImage from './SnakeImage';
@@ -78,8 +77,10 @@ const HomeScreen = () => {
 					>
 						Join Game
 					</button>
-					<Modal />
 				</div>
+				<small className="text-info text-center d-block pt-2">
+					Developed by Julius Vasquez
+				</small>
 			</div>
 		</div>
 	);
