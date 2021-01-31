@@ -1,1 +1,0 @@
-{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,0BAIC,WACD,CAEA,OACC,oCACD","file":"main.d325dd13.chunk.css","sourcesContent":["html,\nbody,\n#root,\n#root > div {\n\theight: 100%;\n}\n\nbody * {\n\tfont-family: 'Press Start 2P', cursive;\n}\n"]}
