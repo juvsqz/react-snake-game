@@ -1,9 +1,9 @@
 {
 	"name": "react-snake-game",
-	"description": "Snake Game built with ReactJS CRA for Xendit Techical Assessment",
+	"homepage": "http://juvsqz.github.io/react-snake-game",
+	"description": "A simple snake game built with React JS (CRA) and socket.io",
 	"version": "0.1.0",
 	"keywords": [
-		"xendit",
 		"snake-game",
 		"reactjs",
 		"cra",
@@ -12,16 +12,17 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/juvsqz/reactjs-redux-mui.git"
+		"url": "https://github.com/juvsqz/react-snake-game.git"
 	},
 	"bugs": {
-		"url": "https://github.com/juvsqz/reactjs-redux-mui/issues"
+		"url": "https://github.com/juvsqz/react-snake-game/issues"
 	},
 	"author": {
 		"name": "Julius L. Vasquez",
 		"email": "juvsqz@gmail.com"
 	},
 	"scripts": {
+		"client:deploy": "npm run build && gh-pages -d build",
 		"start": "react-scripts start --no-cache ./src/app/index.tsx",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
@@ -55,6 +56,7 @@
 		"eslint-plugin-jsx-a11y": "^6.3.1",
 		"eslint-plugin-prettier": "^3.1.4",
 		"express": "^4.17.1",
+		"gh-pages": "^3.1.0",
 		"husky": "^4.2.5",
 		"lint-staged": "^10.2.11",
 		"nodemon": "^2.0.7",
