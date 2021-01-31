@@ -1,0 +1,54 @@
+{
+	"extends": [
+		"react-app",
+		"airbnb",
+		"plugin:react/recommended",
+		"plugin:jsx-a11y/recommended",
+		"plugin:import/typescript",
+		"prettier",
+		"prettier/react"
+	],
+	"plugins": ["react", "jsx-a11y", "prettier"],
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"paths": ["src"],
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
+	},
+	"overrides": [
+		{
+			"files": ["**/*.ts?(x)"],
+			"rules": {
+				"prettier/prettier": "error",
+				"react/jsx-filename-extension": [
+					1,
+					{
+						"extensions": [".js", ".jsx", ".ts", ".tsx"]
+					}
+				],
+				"react/jsx-props-no-spreading": "off",
+				"import/no-extraneous-dependencies": "off",
+				"no-param-reassign": "off",
+				"no-plusplus": "off",
+				"no-restricted-syntax": "off",
+				"no-underscore-dangle": "off",
+				"no-unused-expressions": "off",
+				"no-alert": "off",
+				"import/extensions": [
+					"error",
+					"ignorePackages",
+					{
+						"js": "never",
+						"jsx": "never",
+						"ts": "never",
+						"tsx": "never"
+					}
+				],
+				"no-nested-ternary": "off",
+				"import/no-named-as-default": "off"
+			}
+		}
+	]
+}
