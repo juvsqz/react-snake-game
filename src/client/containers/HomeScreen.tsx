@@ -53,7 +53,6 @@ const HomeScreen = () => {
 
 	if (waitingForOtherPlayers) return <Lobby />;
 	if (showMulti) return <Multiplayer onCancel={reset} />;
-	console.log('showJoin', 123);
 	if (showJoin) return <JoinGame roomId={roomIdParam || ''} onCancel={reset} />;
 
 	return (
