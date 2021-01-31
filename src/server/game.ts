@@ -47,7 +47,8 @@ const initGameState = (name: string, noOfPlayers: number): GameState => {
 		foodColor: FOOD_COLOR,
 		scale: SCALE,
 		speed: SPEED,
-		canvasSize: CANVAS_SIZE
+		canvasSize: CANVAS_SIZE,
+		status: false
 	};
 };
 

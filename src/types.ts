@@ -17,6 +17,7 @@ export type GameState = {
 	scale: number;
 	speed: number;
 	canvasSize: number[];
+	status: boolean;
 };
 
 export type RoomDetails = {

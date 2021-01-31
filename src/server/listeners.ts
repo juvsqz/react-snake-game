@@ -7,6 +7,14 @@ import { cacheStates, cacheRooms } from './cache';
 import { GameState } from '../types';
 
 export default (io: Server, socket: any) => {
+	const emitRoomDetails = (roomId: string, state: GameState) => {
+		io.sockets.in(roomId).emit('room_details', {
+			roomId,
+			noOfPlayers: state.noOfPlayers,
+			connectedPlayers: state.connectedPlayers
+		});
+	};
+
 	/**
 	 * Triggers to continously run the game for a specific room
 	 * until in becomes game over.
@@ -15,7 +23,7 @@ export default (io: Server, socket: any) => {
 	function handleRunGame(roomId: string) {
 		const intervalId = setInterval(() => {
 			const currentGameState = loopGame(cacheStates[roomId]);
-
+			currentGameState.status = true;
 			// means no winner yet
 			if (!isGameOver(currentGameState)) {
 				io.sockets
@@ -77,13 +85,6 @@ export default (io: Server, socket: any) => {
 		}
 	}
 
-	const emitRoomDetails = (roomId: string, state: GameState) => {
-		io.sockets.in(roomId).emit('room_details', {
-			roomId,
-			noOfPlayers: state.noOfPlayers,
-			connectedPlayers: state.connectedPlayers
-		});
-	};
 	/**
 	 * Joins the new player to a specific room
 	 * @param roomId is the unique id shared by
@@ -124,7 +125,15 @@ export default (io: Server, socket: any) => {
 		}
 	}
 
+	const handleDisconnected = () => {
+		const roomId = cacheRooms[socket.id];
+		// Remove from the state
+		const playerState = cacheStates[roomId]?.players[socket.number - 1] || {};
+		playerState.status = false;
+	};
+
 	socket.on('keydown', handleKeydown);
 	socket.on('new_game', handleNewGame);
 	socket.on('join_game', handleJoinGame);
+	socket.on('disconnect', handleDisconnected);
 };

@@ -50,7 +50,6 @@ const GameContextProvider = ({ children }: GameContextProviderProps) => {
 		() => io(`${process.env.REACT_APP_SOCKET_SERVER}` || ''),
 		[]
 	);
-	console.log('testa', process.env.REACT_APP_SOCKET_SERVER);
 	const [state, dispatch] = useReducer(reducer, InitialState);
 
 	const handleSetGameState = (_state: string) => {

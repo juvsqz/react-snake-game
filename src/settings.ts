@@ -11,7 +11,7 @@ export const SCALE = 20;
 /**
  * Speed in (ms) of the snake
  */
-export const SPEED = 100;
+export const SPEED = 1000;
 
 /**
  * Speed in (ms) of the snake

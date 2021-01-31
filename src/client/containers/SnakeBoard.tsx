@@ -15,7 +15,6 @@ const SnakeBoard = (): JSX.Element => {
 
 	useEffect(() => {
 		if (snakeBoardRef.current) {
-			// if (!gameOver && !!snakeBoardRef?.current) {
 			const context = snakeBoardRef.current.getContext('2d');
 			if (context) {
 				if (gameState) {

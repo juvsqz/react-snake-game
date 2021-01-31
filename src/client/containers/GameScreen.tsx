@@ -3,6 +3,7 @@ import { useGameContext } from 'client/providers';
 import { GamePlayer } from 'types';
 import SnakeBoard from './SnakeBoard';
 import ScoreBoard from './ScoreBoard';
+import KeyboardControls from './KeyboardControls';
 import ResultsScreen from './ResultsScreen';
 
 const GameScreen = () => {
@@ -18,7 +19,7 @@ const GameScreen = () => {
 			className="vh-100 d-flex align-items-center"
 			style={{ justifyContent: 'space-evenly' }}
 		>
-			<div />
+			<KeyboardControls />
 			<div className="text-center">
 				<SnakeBoard />
 				<h5 className="d-inline-block" style={{ color: playerData.color }}>
