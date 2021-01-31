@@ -26,7 +26,7 @@ This project was bootstrapped with [Create React App].(https://github.com/facebo
       </ul>
     </li>
     <li><a href="#development">Development</a></li>
-    <li><a href="#deployment">Roadmap</a></li>
+    <li><a href="#deployment">Deployment</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
