@@ -1,7 +1,7 @@
 /**
  * Snakeboard dimension
  */
-export const CANVAS_SIZE = [500, 500];
+export const CANVAS_SIZE = [600, 600];
 
 /**
  * Body scale of the the snake
