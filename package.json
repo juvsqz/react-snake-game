@@ -23,10 +23,10 @@
 	},
 	"scripts": {
 		"build:server": "rm -rf dist/server && tsc --project ./src/server/tsconfig.json",
-		"start:server": "pm2-runtime start ecosystem.config.js --env production",
+		"start:server": "pm2-runtime start ecosystem.config.js -i 1 --env production -i 0",
 		"dev:server": "nodemon",
 		"deploy": "npm run build && gh-pages -d build",
-		"start": "concurrently --kill-others-on-fail \"yarn dev:server\" \"react-scripts start --no-cache ./src/app/index.tsx concurrently\"",
+		"start": "react-scripts start --no-cache ./src/app/index.tsx",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"lint": "yarn lint:scripts && yarn lint:styles",
