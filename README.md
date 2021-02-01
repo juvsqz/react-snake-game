@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App].(https://github.com/facebo
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#prerequisite">Prerequisite</a>
+      <a href="#prerequisites">Prerequisites</a>
     </li>
     <li>
       <a href="#technologies">Technologies</a>
@@ -38,7 +38,7 @@ This project was bootstrapped with [Create React App].(https://github.com/facebo
   </ol>
 </details>
 
-## Prerequisite
+## Prerequisites
 - NodeJS - atleast 12.16.*
 - Yarn - Alternative package manager to npm. Npm can still be used
 
