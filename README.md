@@ -40,8 +40,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Prerequisites
 - NodeJS - atleast 12.16.*
-- Yarn - Alternative package manager to npm. Npm can still be used
-
+- Yarn - Alternative package manager to npm.
 ## Technologies
 
 These are the core technologies & libraries used in the project.
