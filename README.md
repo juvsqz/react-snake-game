@@ -1,7 +1,7 @@
 # React Snake Game
 
-A simple multiplayer snake game built with [ReactJS](https://reactjs.org/) and [Socket.IO](https://socket.io/)
-This project was bootstrapped with [Create React App].(https://github.com/facebook/create-react-app).
+A simple multiplayer snake game built with [ReactJS](https://reactjs.org/) and [Socket.IO](https://socket.io/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![](homescreen.png)
 
