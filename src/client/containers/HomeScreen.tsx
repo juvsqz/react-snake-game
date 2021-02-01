@@ -9,9 +9,7 @@ const HomeScreen = () => {
 	const [showMulti, setShowMulti] = React.useState(false);
 	const [showJoin, setShowJoin] = React.useState(false);
 
-	const roomIdParam = useMemo(() => {
-		return new URLSearchParams(window.location.search).get('id');
-	}, []);
+	const roomIdParam = new URLSearchParams(window.location.search).get('id');
 
 	const { state, socket } = useGameContext();
 

@@ -22,8 +22,8 @@ const JoinGame = ({ onCancel, roomId: roomIdParam }: JoinGameProps) => {
 	};
 
 	const handleCancel = () => {
-		onCancel();
 		window.history.pushState(null, '', window.location.pathname);
+		onCancel();
 	};
 
 	const handleJoinGame = () => {

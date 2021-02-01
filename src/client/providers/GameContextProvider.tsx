@@ -71,7 +71,10 @@ const GameContextProvider = ({ children }: GameContextProviderProps) => {
 		socket.on('room_full', () => alert('Room already full!'));
 	}, [socket]);
 
-	const reset = () => dispatch(InitialState);
+	const reset = () => {
+		window.history.pushState(null, '', window.location.pathname);
+		dispatch(InitialState);
+	};
 
 	return (
 		<>

@@ -113,7 +113,7 @@ export default (io: Server, socket: any) => {
 		socket.number = connectedPlayers + 1;
 		socket.emit('init', socket.number);
 
-		gameState.players[connectedPlayers - 1].name = data?.name;
+		gameState.players[connectedPlayers].name = data?.name;
 		gameState.connectedPlayers = socket.number;
 
 		// If active players is equal to the required players,
