@@ -43,9 +43,9 @@ const GameScreen = () => {
 		>
 			<div>
 				{!state.status && (
-					<div className="mb-5 text-color text-success">
+					<h4 className="mb-5 text-color text-danger">
 						The game will start in {timeLeft}
-					</div>
+					</h4>
 				)}
 				<KeyboardControls />
 			</div>
