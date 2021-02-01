@@ -9,6 +9,7 @@ type GameContextState = {
 	winnerPlayerId: number | null;
 	gameOver: boolean;
 	gameState: GameState | null;
+	status: boolean;
 	reset: boolean;
 };
 
@@ -18,6 +19,7 @@ const InitialState: GameContextState = {
 	winnerPlayerId: null,
 	gameOver: false,
 	gameState: null,
+	status: false,
 	reset: false
 };
 
@@ -70,6 +72,12 @@ const GameContextProvider = ({ children }: GameContextProviderProps) => {
 		socket.on('invalid_room', () => alert('Invalid room!'));
 		socket.on('room_full', () => alert('Room already full!'));
 	}, [socket]);
+
+	React.useEffect(() => {
+		if (state.status) {
+			socket.emit('run_game');
+		}
+	}, [state.status, socket]);
 
 	const reset = () => {
 		window.history.pushState(null, '', window.location.pathname);

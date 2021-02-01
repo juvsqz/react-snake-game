@@ -12,7 +12,6 @@ const SnakeBoard = (): JSX.Element => {
 
 	const { state, socket } = useGameContext();
 	const { gameState } = state;
-
 	useEffect(() => {
 		if (snakeBoardRef.current) {
 			const context = snakeBoardRef.current.getContext('2d');
@@ -33,22 +32,26 @@ const SnakeBoard = (): JSX.Element => {
 						gameState.canvasSize[1]
 					);
 
-					gameState.players.forEach(({ color, snake, status }) => {
-						if (status) {
-							context.fillStyle = color;
-							snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
-						}
-					});
-					const { food } = gameState;
-					context.fillStyle = gameState.foodColor;
-					context.fillRect(food[0], food[1], 1, 1);
+					if (state.status) {
+						gameState.players.forEach(({ color, snake, status }) => {
+							if (status) {
+								context.fillStyle = color;
+								snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
+							}
+						});
+						const { food } = gameState;
+						context.fillStyle = gameState.foodColor;
+						context.fillRect(food[0], food[1], 1, 1);
+					}
 				}
 			}
 		}
-	}, [gameState]);
+	}, [gameState, state.status]);
 
 	const handleKeyDown = (event: KeyboardEvent) => {
-		return socket?.emit('keydown', event.key);
+		if (state.status) {
+			return socket?.emit('keydown', event.key);
+		}
 	};
 
 	return (

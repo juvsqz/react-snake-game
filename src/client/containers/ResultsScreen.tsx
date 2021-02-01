@@ -11,6 +11,7 @@ const ResultsScreen = () => {
 		socket?.emit('new_game');
 		reset();
 	};
+
 	return (
 		<div
 			className={`vh-100 d-flex align-items-${

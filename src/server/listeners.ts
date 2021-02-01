@@ -20,10 +20,13 @@ export default (io: Server, socket: any) => {
 	 * until in becomes game over.
 	 * @param roomId unique id for a specific game
 	 */
-	function handleRunGame(roomId: string) {
+	function handleRunGame(_roomId: string) {
+		const roomId = _roomId || cacheRooms[socket.id];
 		const intervalId = setInterval(() => {
-			const currentGameState = loopGame(cacheStates[roomId]);
-			currentGameState.status = true;
+			let currentGameState = cacheStates[roomId];
+			if (currentGameState.status) {
+				currentGameState = loopGame(currentGameState);
+			}
 			// means no winner yet
 			if (!isGameOver(currentGameState)) {
 				io.sockets
@@ -132,8 +135,14 @@ export default (io: Server, socket: any) => {
 		playerState.status = false;
 	};
 
+	const setRunGameActive = () => {
+		const roomId = cacheRooms[socket.id];
+		cacheStates[roomId].status = true;
+	};
+
 	socket.on('keydown', handleKeydown);
 	socket.on('new_game', handleNewGame);
 	socket.on('join_game', handleJoinGame);
 	socket.on('disconnect', handleDisconnected);
+	socket.on('run_game', setRunGameActive);
 };
